@@ -1,3 +1,397 @@
 @use "../../styles/partials/Mixins.scss" as *;
 @use "../../styles/partials/Global.scss" as *;
 @use "../../styles/partials/Variables.scss" as *;
+
+main {
+   padding: 0 1rem 1rem 1rem;
+   text-align: center;
+
+   .hero {
+      background-image: url('../../assets/images/general/2.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 25rem;
+      padding: 1.25rem;
+      color: $tx-100;
+
+      &__header {
+         font-size: 2.5rem;
+         color: $bg-100;
+      }
+
+      &__sub-header {
+         font-size: 1.5rem;
+         color: $tx-200;
+         margin-bottom: 0.625rem;
+      }
+
+      &__description {
+         font-size: 1.2rem;
+         color: $tx-100;
+         margin-bottom: 1.25rem;
+      }
+   }
+
+   .event {
+      background: $bg-100;
+      padding: 1.25rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
+      text-align: center;
+      margin-bottom: 1.25rem;
+
+      &__header {
+         font-size: 1.5rem;
+         color: $tx-200;
+         margin-bottom: 0.625rem;
+      }
+
+      &__description {
+         font-size: 1rem;
+         color: $tx-100;
+         line-height: 1.5;
+      }
+   }
+
+   .donate {
+      &__cont {
+         background: $bg-100;
+         padding: 1.25rem;
+         border-radius: 0.5rem;
+         box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
+         text-align: center;
+         margin-bottom: 1.25rem;
+      }
+
+      &__header {
+         font-size: 1.5rem;
+         color: $tx-200;
+         margin-bottom: 0.625rem;
+      }
+
+      &__ul {
+         list-style: none;
+         padding-left: 1.25rem;
+         margin-top: 0.625rem;
+      }
+
+      &__items {
+         font-size: 1rem;
+         color: $tx-100;
+         line-height: 1.5;
+
+         a {
+            color: $tx-200;
+            text-decoration: underline;
+            &:hover {
+               color: darken($tx-200, 10%);
+            }
+         }
+      }
+
+      &__description {
+         font-size: 1rem;
+         color: $tx-100;
+         line-height: 1.5;
+         margin-top: 0.625rem;
+      }
+   }
+
+   .kayak {
+      padding: 1.25rem;
+      box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
+
+      &__header {
+         font-size: 1.5rem;
+         color: $tx-200;
+         margin-bottom: 0;
+      }
+
+      &__cont {
+         background-color: $bg-100;
+         padding: 1.25rem;
+         border-radius: 0.5rem;
+         margin-bottom: 1.25rem;
+      }
+
+      &__description {
+         font-size: 1rem;
+         color: $tx-100;
+         line-height: 1.5;
+      }
+
+      &__ul {
+         list-style: none;
+         padding-left: 1.25rem;
+         margin-top: 0.625rem;
+      }
+
+      &__item {
+         font-size: 1rem;
+         color: $tx-100;
+         line-height: 1.5;
+      }
+   }
+
+   .cancel {
+      &__header {
+         font-size: 1.5rem;
+         color: $tx-200;
+         margin-bottom: 0.625rem;
+      }
+
+      &__description {
+         font-size: 1rem;
+         color: $tx-100;
+         line-height: 1.5;
+         text-align: left;
+      }
+   }
+
+   .button {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-top: 1.875rem;
+
+      &__donate,
+      &__book {
+         padding: 0.625rem 1.25rem;
+         font-size: 1rem;
+         border-radius: 0.25rem;
+         color: $bg-100;
+         cursor: pointer;
+         text-decoration: none;
+         background-color: $ac-100;
+
+         &:hover {
+            opacity: 0.9;
+         }
+      }
+
+      &__book {
+         background-color: $ac-200;
+      }
+   }
+
+   @include mobile-m {
+      .hero__header {
+         font-size: 2rem;
+      }
+      .hero__sub-header {
+         font-size: 1.2rem;
+      }
+   }
+
+   @include mobile-l {
+      .hero__header {
+         font-size: 2.2rem;
+      }
+   }
+
+   @include tablet {
+      .hero__header {
+         font-size: 2.5rem;
+      }
+   }
+
+   @include laptop {
+      .hero__header {
+         font-size: 2.8rem;
+      }
+   }
+
+   @include desktop {
+      .hero__header {
+         font-size: 3rem;
+      }
+   }
+}
+
+
+// main {
+//    padding: 0 1rem 1rem 1rem;
+//    text-align: center;
+ 
+//    .hero {
+//       background-image: url('../../assets/images/general/2.png'); // Using the imported image path
+//       background-size: cover;
+//       background-position: center;
+//       background-repeat: no-repeat;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: center;
+//       height: 400px; // Adjust height as needed for your image
+//       padding: 20px;
+//       color: #ffffff;
+//       &__header {
+//          font-size: 2.5em;
+//          color: white;
+//       }
+//       &__sub-header {
+//          font-size: 1.5em;
+//          color: #006c7f;
+//          margin-bottom: 10px;
+//       }
+ 
+//       &__description {
+//          font-size: 1.2em;
+//          color: #3c3c3c;
+//          margin-bottom: 20px;
+//       }
+//    }
+ 
+//    .event {
+//       background: #fff;
+//       padding: 1.25rem;
+//       border-radius: 8px;
+//       box-shadow: 0px 8px 20px rgba(0, 128, 255, 0.15);
+//       text-align: center;
+//       margin-bottom: 1.25rem;
+
+//       &__header {
+//          font-size: 1.5em;
+//          color: #006c7f;
+//          margin-bottom: 10px;
+//       }
+ 
+//       &__description {
+//          font-size: 1em;
+//          color: #3c3c3c;
+//          line-height: 1.5;
+//       }
+//    }
+ 
+//    .donate {
+//       &__cont {
+//          background: #fff;
+//          padding: 20px;
+//          border-radius: 8px;
+//          box-shadow: 0px 8px 20px rgba(0, 128, 255, 0.15);
+//          text-align: center;
+//          margin-bottom: 20px;
+//       }
+ 
+//       &__header {
+//          font-size: 1.5em;
+//          color: #006c7f;
+//          margin-bottom: 10px;
+//       }
+ 
+//       &__ul {
+//          list-style-type: disc;
+//          padding-left: 20px;
+//          margin-top: 10px;
+//          list-style: none;
+//       }
+ 
+//       &__items {
+//          font-size: 1em;
+//          color: #3c3c3c;
+//          line-height: 1.5;
+ 
+//          a {
+//             color: #006c7f;
+//             text-decoration: underline;
+//             &:hover {
+//                color: #004a5a;
+//             }
+//          }
+//       }
+ 
+//       &__description {
+//          font-size: 1em;
+//          color: #3c3c3c;
+//          line-height: 1.5;
+//          margin-top: 10px;
+//       }
+//    }
+ 
+//    .kayak {
+//       padding: 1.25rem;
+//       box-shadow: 0px 8px 20px rgba(0, 128, 255, 0.15);
+//       &__header {
+//          font-size: 1.5em;
+//          color: #006c7f;
+//          margin-bottom: 0rem;
+
+//       }
+//       &__cont {
+//          background-color: #fff; 
+//          padding: 0 1.25rem 1.25rem 1.25rem;
+//          border-radius: .5rem; 
+//          margin-bottom: 1.25rem; 
+//       }
+   
+      
+   
+//       &__description {
+//          font-size: 1em;
+//          color: #3c3c3c;
+//          line-height: 1.5;
+//       }
+   
+//       &__ul {
+//          list-style-type: none; // Removes bullets
+//          padding-left: 20px;
+//          margin-top: 10px;
+//       }
+   
+//       &__item {
+//          font-size: 1em;
+//          color: #3c3c3c;
+//          line-height: 1.5;
+//       }
+//    }
+
+//    .cancel {
+//      &__header {
+//        font-size: 1.5em;
+//        color: #006c7f;
+//        margin-bottom: 10px;
+//      }
+ 
+//      &__description {
+//        font-size: 1em;
+//        color: #3c3c3c;
+//        line-height: 1.5;
+//        text-align: left;
+//      }
+//    }
+ 
+//    .button {
+//       display: flex;
+//       justify-content: center;
+//       gap: 20px;
+//       margin-top: 30px;
+ 
+//       &__donate,
+//       &__book {
+//          padding: 10px 20px;
+//          font-size: 1em;
+//          border-radius: 4px;
+//          color: #fff;
+//          cursor: pointer;
+//          text-decoration: none;
+ 
+//          &.button__donate {
+//          background-color: #008ba3;
+//          }
+ 
+//          &.button__book {
+//          background-color: #68a67d;
+//          }
+ 
+//          &:hover {
+//          opacity: 0.9;
+//          }
+//       }
+//    }
+// }
+ 

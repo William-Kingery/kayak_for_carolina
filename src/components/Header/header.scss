@@ -1,0 +1,15 @@
+@use "../../styles/partials/Mixins.scss" as *;
+@use "../../styles/partials/Global.scss" as *;
+@use "../../styles/partials/Variables.scss" as *;
+
+
+.header {
+    position: fixed; 
+    top: 0;          
+    width: 100%;     
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+}
