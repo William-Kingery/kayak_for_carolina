@@ -19,6 +19,9 @@ main {
       margin-top: 4rem;
       color: $tx-100;
       position: relative;
+      @include tablet {
+         margin-top: 5.5rem;
+      }
 
       &::before {
          content: '';
@@ -42,12 +45,21 @@ main {
          color: $bg-100;
          text-shadow: 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.7);
       }
+
       &__button {
          padding-top: 4rem;
       }
+
       &__cont {
          padding: 1rem 1rem 0 1rem;
+         @include mobile-l {
+            padding: 1.5rem 1.5rem 0 1.5rem;
+         }
+         @include tablet {
+            padding: 1rem 1.5rem .5rem 1.5rem;
+         }
       }
+
       &__sub-header {
          font-size: 1.5rem;
          color: $tx-200;
@@ -64,11 +76,17 @@ main {
    .event {
       background: $bg-100;
       padding: 1rem;
-      margin: .5rem;
+      margin: .5rem .5rem 1.25rem .5rem;
       border-radius: 0.5rem;
       box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
       text-align: center;
-      margin-bottom: 1.25rem;
+      @include mobile-l {
+         margin: 1rem 1rem 2rem 1rem;
+      }
+      @include tablet {
+         margin: 1rem 2rem .5rem 2rem;
+         padding: 1rem 2rem;
+      }
 
       &__header {
          font-size: 1.5rem;
@@ -87,11 +105,18 @@ main {
       &__cont {
          background: $bg-100;
          padding: 1rem;
-         margin: .5rem;
+         margin: .5rem .5rem 1.25rem .5rem;
          border-radius: 0.5rem;
          box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
          text-align: center;
          margin-bottom: 1.25rem;
+         @include mobile-l {
+            margin: 1rem 1rem 2rem 1rem;
+         }
+         @include tablet {
+            margin: 1rem 2rem .5rem 2rem;
+            padding: 1rem 2rem;
+         }
       }
 
       &__header {
@@ -105,14 +130,14 @@ main {
          padding-left: 1.25rem;
          margin-top: 0.625rem;
          font-size: 1.0625rem;
-      }
-
-      &__items {
-         color: $tx-100;
          line-height: 1.5;
+         color: $tx-100;
+      }
+      &__items {
+
          a {
             color: $tx-200;
-            text-decoration: underline;
+            text-decoration: none;
             &:hover {
                color: darken($tx-200, 10%);
             }
@@ -129,7 +154,15 @@ main {
    .kayak {
       padding: 1.25rem;
       box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
-      margin: .5rem;
+      margin: .5rem .5rem 1.25rem .5rem;
+      @include mobile-l {
+         margin: 1rem 1rem 2rem 1rem;
+      }
+      @include tablet {
+         margin: 1rem 2rem .5rem 2rem;
+         padding: 1rem 2rem;
+      }
+
       &__header {
          font-size: 1.5rem;
          color: $tx-200;
@@ -158,6 +191,7 @@ main {
          font-size: 1rem;
          color: $tx-100;
          line-height: 1.5;
+         font-weight: 600;
       }
    }
 
@@ -183,8 +217,8 @@ main {
       justify-content: center;
       gap: 1.25rem;
 
-   
       &__donate,
+      &__info,
       &__book {
          padding: 0.75rem 1.5rem;
          font-size: 1.1rem;
@@ -206,6 +240,10 @@ main {
    
       &__book {
          background-color: $ac-200;
+      }
+
+      &__info {
+         background-color: $ac-300;
       }
    }
 

@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Pamphlet from "../../components/Popup/Popup";
 // style
 import "./Home.scss";
 
 const Home = () => {
 
+   const [isModalOpen, setIsModalOpen] = useState(false);
+
+   const openModal = () => setIsModalOpen(true);
+   const closeModal = () => setIsModalOpen(false);
 
    return (
       <main>
@@ -26,12 +31,23 @@ const Home = () => {
          </section>
          <section className="event">
             <h2 className="event__header">Event Overview</h2>
-            <p className="event__description">Join Kayak Carolina for a paddle downriver from Downtown Wilmington at Dramtree Park to River Road Park, stopping by Shark's Tooth Island at the end.
+            <p className="event__description">
+               Join Kayak Carolina for a paddle downriver from Downtown Wilmington at Dramtree Park to River Road Park, stopping by Shark's Tooth Island at the end.
                The paddle is approximately 8 miles, all going with the downriver current and the outgoing tide.
-               For this event, you are more than welcome to bring your kayak and any gear you wish. Feel free to bring a team from work or friends to enjoy the paddle for a great cause!</p>
+            </p>
+            <p >
+               You're welcome to bring your own kayak and any gear you'd like. If you don’t have a kayak, we’ll be offering single and double rentals, with 100% of the rental cost going to charity. 
+               Gather your coworkers or friends to paddle for a great cause!
+            </p>
             <p className="event__description"><strong>Duration:</strong> 4-6 hours</p>
             <p className="event__description"><strong>Meeting Point:</strong> Dramtree Park, 602 Surry Street, Wilmington, NC 28405</p>
          </section>
+         <div className="button">
+            <button onClick={openModal} className="button__info">
+               More Info
+            </button>
+            <Pamphlet isOpen={isModalOpen} onClose={closeModal} />
+         </div>
          <section className="donate">
             <div className="donate__cont">
                <h2 className="donate__header">Donations!</h2>

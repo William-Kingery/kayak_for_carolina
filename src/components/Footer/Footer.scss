@@ -14,6 +14,7 @@
     font-size: 1rem;
     gap: .5rem;
     box-shadow: 0 -0.5rem 1.25rem rgba(0, 128, 255, 0.15);
+    padding-bottom: 1rem;
 
     @include tablet {
         padding: 2rem 1rem;
@@ -66,21 +67,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
 
-        .footer__feather-icon {
-            width: 1.875rem;
-            margin-bottom: 0.5rem;
-        }
+    &__icon-cont {
+        margin-top: .3rem;
+    }
 
-        .footer__social-link {
-            color: $tx-100;
-            text-decoration: none;
-            margin: 0.5rem 0;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+    &__insta {
+        margin-right: .5rem;
     }
 
     .footer__link {

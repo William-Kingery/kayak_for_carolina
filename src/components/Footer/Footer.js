@@ -20,13 +20,15 @@ const Footer = () => {
             <p className="footer__text">Phone: 910-458-9171</p>
          </div>
          <div className="footer__social">
-            <p className="footer__header">Find us</p>
-            <a href="https://www.instagram.com/kayakcarolina/" target="_blank" rel="noopener noreferrer">
-               <img src={Instagram} alt="Instagram Icon" className="footer__social-icon" />
-            </a>
-            <a href="https://www.facebook.com/kayakcarolinaNC/" target="_blank" rel="noopener noreferrer">
-               <img src={Facebook} alt="Facebook Icon" className="footer__social-icon" />
-            </a>
+            <h3 className="footer__header">Find us</h3>
+            <div className="footer__icon-cont">
+               <a href="https://www.instagram.com/kayakcarolina/" target="_blank" rel="noopener noreferrer">
+                  <img src={Instagram} alt="Instagram Icon" className="footer__insta" />
+               </a>
+               <a href="https://www.facebook.com/kayakcarolinaNC/" target="_blank" rel="noopener noreferrer">
+                  <img src={Facebook} alt="Facebook Icon" className="footer__facebook" />
+               </a>
+            </div>
          </div>
       </footer>
    );
