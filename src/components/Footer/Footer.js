@@ -2,7 +2,7 @@ import React from "react";
 import logo from '../../assets/images/logo/KC_logo.png';
 import Instagram from '../../assets/images/logo/Instagram-Icon.svg'
 import Facebook from '../../assets/images/logo/Facebook-Icon.svg'
-import "./Footer.scss"
+import "./Footer.scss";
 
 
 

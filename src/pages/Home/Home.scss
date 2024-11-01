@@ -142,9 +142,6 @@ main {
          a {
             color: $tx-200;
             text-decoration: none;
-            &:hover {
-               color: darken($tx-200, 10%);
-            }
          }
       }
       &__description {
@@ -231,7 +228,7 @@ main {
          cursor: pointer;
          text-decoration: none;
          background-color: $ac-100;
-         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); // Darker shadow for depth
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
          transition: transform 0.2s, opacity 0.2s;
          position: relative;
          z-index: 2;
