@@ -2,9 +2,9 @@
 deployment:
   tasks:
     - export NODE_ENV=production
-    - /opt/cpanel/ea-nodejs16/bin/npm install
-    - /opt/cpanel/ea-nodejs16/bin/npm run build
-    - rsync -a --exclude='.git' --delete-after ./ /home/ze0xanq7p758/public_html/
+    - /opt/cpanel/ea-nodejs20/bin/npm install
+    - /opt/cpanel/ea-nodejs20/bin/npm run build
+    - rsync -a --exclude='.git' --delete-after ./build/ /home/ze0xanq7p758/public_html/
 # version: 2.0
 
 # build:
