@@ -1,6 +1,0 @@
-deployment:
-  tasks:
-    - export NODE_ENV=production
-    - /opt/cpanel/ea-nodejs16/bin/npm install
-    - /opt/cpanel/ea-nodejs16/bin/npm run build
-    - rsync -a --exclude='.git' --delete-after ./ /home/username/public_html/
