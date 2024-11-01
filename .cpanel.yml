@@ -1,0 +1,13 @@
+version: 2.0
+
+build:
+  steps:
+    - name: Install npm packages
+      command: npm install
+    - name: Build the application
+      command: npm run build
+
+deploy:
+  steps:
+    - name: Deploy to the web root
+      command: cp -R build/* /home/ze0xanq7p758/public_html/
