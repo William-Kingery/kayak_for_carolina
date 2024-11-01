@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import Pamphlet from "../../components/Popup/Popup";
+
 // style
 import "./Home.scss";
 
 const Home = () => {
 
-   const [isModalOpen, setIsModalOpen] = useState(false);
-
-   const openModal = () => setIsModalOpen(true);
-   const closeModal = () => setIsModalOpen(false);
-
+   const handleBookingClick = (e, href) => {
+      e.preventDefault();
+      const userConfirmed = window.confirm("You are being redirected to our secure event booking and donation site.");
+      if (userConfirmed) {
+         window.open(href, "_blank", "noopener,noreferrer");
+      }
+   };
    return (
       <main>
          <Header/>
@@ -19,8 +21,10 @@ const Home = () => {
             <h1 className="hero__header">Kayak For Carolina</h1>
             <div className="hero__button">
                <div className="button">
-               <a href="YOUR_DONATION_SITE_URL" className="button__donate">Donate</a>
-               <a href="https://kayakcarolina.com/kayak-tours/" className="button__book">Book Event</a>
+               <a href="https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes" 
+                  onClick={(e) => handleBookingClick(e, "https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes")} className="button__donate">Donate</a>
+               <a href="https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes" 
+                  onClick={(e) => handleBookingClick(e, "https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes")} className="button__book">Book Event</a>
                </div>
             </div>
          </section>
@@ -42,11 +46,12 @@ const Home = () => {
             <p className="event__description"><strong>Duration:</strong> 4-6 hours</p>
             <p className="event__description"><strong>Meeting Point:</strong> Dramtree Park, 602 Surry Street, Wilmington, NC 28405</p>
          </section>
-         <div className="button">
-            <button onClick={openModal} className="button__info">
-               More Info
-            </button>
-            <Pamphlet isOpen={isModalOpen} onClose={closeModal} />
+         <div className="more-info">
+            <div className="button">
+               <a href="/WNC_pamphlet.pdf" target="_blank" rel="noopener noreferrer" className="button__info">
+                  More Info
+               </a>
+            </div>
          </div>
          <section className="donate">
             <div className="donate__cont">
