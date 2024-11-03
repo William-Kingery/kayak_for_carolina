@@ -4,82 +4,152 @@
 
 main {
    text-align: center;
+}
+.hero {
+   background-image: url('../../assets/images/general/2.png'); 
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 25rem;
+   padding: 1.25rem;
+   margin-top: 4rem;
+   color: $tx-100;
+   position: relative;
+   @include tablet {
+      margin-top: 10rem;
+   }
+   @include laptop {
+      margin-top: 10rem;
+   }
 
-   .hero {
-      background-image: url('../../assets/images/general/2.png'); 
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 25rem;
-      padding: 1.25rem;
-      margin-top: 4rem;
-      color: $tx-100;
+   &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.15); // Adjust opacity as needed
+      z-index: 1;
+   }
+
+   &__header, &__sub-header, &__description {
       position: relative;
+      z-index: 2;
+   }
+
+   &__header {
+      font-family: $font-large;
+      font-size: 3rem;
+      color: $bg-100;
+      text-shadow: 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.7);
+   }
+
+   &__button {
+      padding-top: 4rem;
+   }
+
+   &__cont {
+      padding: 1rem 1rem 0 1rem;
+      @include mobile-l {
+         padding: 1.5rem 1.5rem 0 1.5rem;
+      }
       @include tablet {
-         margin-top: 5.5rem;
-      }
-
-      &::before {
-         content: '';
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background: rgba(0, 0, 0, 0.15); // Adjust opacity as needed
-         z-index: 1;
-      }
-
-      &__header, &__sub-header, &__description {
-         position: relative;
-         z-index: 2;
-      }
-
-      &__header {
-         font-family: $font-large;
-         font-size: 3rem;
-         color: $bg-100;
-         text-shadow: 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.7);
-      }
-
-      &__button {
-         padding-top: 4rem;
-      }
-
-      &__cont {
-         padding: 1rem 1rem 0 1rem;
-         @include mobile-l {
-            padding: 1.5rem 1.5rem 0 1.5rem;
-         }
-         @include tablet {
-            padding: 1rem 1.5rem .5rem 1.5rem;
-         }
-      }
-
-      &__sub-header {
-         font-size: 1.5rem;
-         color: $tx-200;
-         margin-bottom: 0.625rem;
-      }
-
-      &__description {
-         font-size: 1.2rem;
-         color: $tx-100;
-         margin-bottom: 1.25rem;
+         padding: 1rem 1.5rem .5rem 1.5rem;
       }
    }
 
-   .event {
+   &__sub-header {
+      font-size: 1.5rem;
+      color: $tx-200;
+      margin-bottom: 0.625rem;
+   }
+
+   &__description {
+      font-size: 1.125rem;
+      color: $tx-100;
+      margin-bottom: 1.25rem;
+   }
+}
+
+.event {
+   background: $bg-100;
+   padding: 1rem;
+   margin: .5rem .5rem 1.25rem .5rem;
+   border-radius: 0.5rem;
+   box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
+   text-align: center;
+   @include mobile-l {
+      margin: 1rem 1rem 2rem 1rem;
+   }
+   @include tablet {
+      margin: 1rem 2rem .5rem 2rem;
+      padding: 1rem 2rem;
+   }
+
+   &__header {
+      font-size: 1.5rem;
+      color: $tx-200;
+      margin-bottom: 0.625rem;
+   }
+
+   &__description {
+      font-size: 1.125rem;
+      color: $tx-100;
+      line-height: 1.5;
+   }
+}
+
+.options {
+   background: $bg-100;
+   padding: 1rem;
+   margin: .5rem .5rem 1.25rem .5rem;
+   border-radius: 0.5rem;
+   box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
+   text-align: center;
+   @include mobile-l {
+      margin: 1rem 1rem 2rem 1rem;
+   }
+   @include tablet {
+      margin: 1rem 2rem .5rem 2rem;
+      padding: 1rem 2rem;
+   }
+   &__header {
+      font-size: 1.5rem;
+      color: $tx-200;
+      margin-bottom: 0.625rem;
+   }
+   &__sub-header {
+      font-size: 1.5rem;
+      color: $tx-100;
+      margin-bottom: 0.625rem;
+      font-weight: 500;
+      text-decoration: underline;
+   }
+   &__description {
+      font-size: 1.125rem;
+      color: $tx-100;
+      line-height: 1.5;
+   }
+}
+
+.more-info {
+   padding: 1rem 0;
+}
+
+.donate {
+   &__cont {
       background: $bg-100;
       padding: 1rem;
       margin: .5rem .5rem 1.25rem .5rem;
       border-radius: 0.5rem;
       box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
       text-align: center;
+      margin-bottom: 1.25rem;
       @include mobile-l {
          margin: 1rem 1rem 2rem 1rem;
       }
@@ -87,200 +157,157 @@ main {
          margin: 1rem 2rem .5rem 2rem;
          padding: 1rem 2rem;
       }
+   }
 
-      &__header {
-         font-size: 1.5rem;
+   &__header {
+      font-size: 1.5rem;
+      color: $tx-200;
+      margin-bottom: 0.625rem;
+   }
+   &__sub-header {
+      font-size: 1.5rem;
+      color: $tx-200;
+      margin-bottom: 0.625rem;
+   }
+
+   &__ul {
+      list-style: none;
+      padding-left: 1.25rem;
+      margin-top: 0.625rem;
+      font-size: 1.0625rem;
+      line-height: 1.5;
+      color: $tx-100;
+   }
+   &__items {
+
+      a {
          color: $tx-200;
-         margin-bottom: 0.625rem;
-      }
-
-      &__description {
-         font-size: 1rem;
-         color: $tx-100;
-         line-height: 1.5;
-      }
-   }
-
-   .more-info {
-      padding: 1rem 0;
-   }
-
-   .donate {
-      &__cont {
-         background: $bg-100;
-         padding: 1rem;
-         margin: .5rem .5rem 1.25rem .5rem;
-         border-radius: 0.5rem;
-         box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
-         text-align: center;
-         margin-bottom: 1.25rem;
-         @include mobile-l {
-            margin: 1rem 1rem 2rem 1rem;
-         }
-         @include tablet {
-            margin: 1rem 2rem .5rem 2rem;
-            padding: 1rem 2rem;
-         }
-      }
-
-      &__header {
-         font-size: 1.5rem;
-         color: $tx-200;
-         margin-bottom: 0.625rem;
-      }
-
-      &__ul {
-         list-style: none;
-         padding-left: 1.25rem;
-         margin-top: 0.625rem;
-         font-size: 1.0625rem;
-         line-height: 1.5;
-         color: $tx-100;
-      }
-      &__items {
-
-         a {
-            color: $tx-200;
-            text-decoration: none;
-         }
-      }
-      &__description {
-         font-size: 1rem;
-         color: $tx-100;
-         line-height: 1.5;
-         margin-top: 0.625rem;
-      }
-   }
-
-   .kayak {
-      padding: 1.25rem;
-      box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
-      margin: .5rem .5rem 1.25rem .5rem;
-      @include mobile-l {
-         margin: 1rem 1rem 2rem 1rem;
-      }
-      @include tablet {
-         margin: 1rem 2rem .5rem 2rem;
-         padding: 1rem 2rem;
-      }
-
-      &__header {
-         font-size: 1.5rem;
-         color: $tx-200;
-         margin-bottom: .5rem;
-      }
-
-      &__cont {
-         background-color: $bg-100;
-         padding: 0 1rem;
-         border-radius: 0.5rem;
-      }
-
-      &__description {
-         font-size: 1rem;
-         color: $tx-100;
-         line-height: 1.5;
-      }
-
-      &__ul {
-         list-style: none;
-         padding-left: 1.25rem;
-         margin-top: 0.625rem;
-      }
-
-      &__item {
-         font-size: 1rem;
-         color: $tx-100;
-         line-height: 1.5;
-         font-weight: 600;
-      }
-   }
-
-   .cancel {
-      margin: 2rem 1rem 4rem 1rem;
-      text-align: center;
-      &__header {
-         font-size: 1.5rem;
-         color: $tx-200;
-         margin-bottom: 0.625rem;
-      }
-
-      &__description {
-         font-size: 1rem;
-         color: $tx-100;
-         line-height: 1.5;
-         text-align: center;
-      }
-   }
-
-   .button {
-      display: flex;
-      justify-content: center;
-      gap: 1.25rem;
-
-      &__donate,
-      &__info,
-      &__book {
-         padding: 0.75rem 1.5rem;
-         font-size: 1.1rem;
-         border-radius: 0.25rem;
-         color: $bg-100;
-         cursor: pointer;
          text-decoration: none;
-         background-color: $ac-100;
-         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-         transition: transform 0.2s, opacity 0.2s;
-         position: relative;
-         z-index: 2;
-   
-         &:hover {
-            opacity: 0.95;
-            transform: scale(1.05);
-         }
       }
-   
-      &__book {
-         background-color: $ac-200;
-      }
+   }
+   &__description {
+      font-size: 1.25rem;
+      color: $tx-100;
+      line-height: 1.5;
+      margin-top: 0.625rem;
+   }
+}
 
-      &__info {
-         background-color: $ac-300;
+.kayak {
+   padding: 1.25rem;
+   box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
+   margin: .5rem .5rem 1.25rem .5rem;
+   @include mobile-l {
+      margin: 1rem 1rem 2rem 1rem;
+   }
+   @include tablet {
+      margin: 1rem 2rem 3rem 2rem;
+      padding: 2rem 2rem;
+   }
+
+   &__header {
+      font-size: 1.5rem;
+      color: $tx-200;
+      margin-bottom: .5rem;
+   }
+
+   &__cont {
+      background-color: $bg-100;
+      padding: 0 1rem;
+      border-radius: 0.5rem;
+   }
+
+   &__description {
+      font-size: 1.125rem;
+      color: $tx-100;
+      line-height: 1.5;
+   }
+
+   &__ul {
+      list-style: none;
+      padding-left: 1.25rem;
+      margin-top: 0.625rem;
+   }
+
+   &__item {
+      font-size: 1rem;
+      color: $tx-100;
+      line-height: 1.5;
+      font-weight: 600;
+   }
+}
+
+.button {
+   display: flex;
+   justify-content: center;
+   gap: 1.25rem;
+
+   &__donate,
+   &__info,
+   &__book {
+      padding: 0.75rem 1.5rem;
+      font-size: 1.125rem;
+      border-radius: 0.25rem;
+      color: $bg-100;
+      cursor: pointer;
+      text-decoration: none;
+      background-color: $ac-100;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s, opacity 0.2s;
+      position: relative;
+      z-index: 2;
+
+      &:hover {
+         opacity: 0.95;
+         transform: scale(1.05);
       }
    }
 
-   // @include mobile-m {
-   //    .hero__header {
-   //       font-size: 2rem;
-   //    }
-   //    .hero__sub-header {
-   //       font-size: 1.2rem;
-   //    }
-   // }
+   &__book {
+      background-color: $ac-200;
+   }
 
-   // @include mobile-l {
-   //    .hero__header {
-   //       font-size: 2.2rem;
-   //    }
-   // }
-
-   // @include tablet {
-   //    .hero__header {
-   //       font-size: 2.5rem;
-   //    }
-   // }
-
-   // @include laptop {
-   //    .hero__header {
-   //       font-size: 2.8rem;
-   //    }
-   // }
-
-   // @include desktop {
-   //    .hero__header {
-   //       font-size: 3rem;
-   //    }
-   // }
+   &__info {
+      background-color: $ac-300;
+   }
 }
+.bottom {
+   margin-bottom: 4rem;
+}
+
+// @include mobile-m {
+//    .hero__header {
+//       font-size: 2rem;
+//    }
+//    .hero__sub-header {
+//       font-size: 1.2rem;
+//    }
+// }
+
+// @include mobile-l {
+//    .hero__header {
+//       font-size: 2.2rem;
+//    }
+// }
+
+// @include tablet {
+//    .hero__header {
+//       font-size: 2.5rem;
+//    }
+// }
+
+// @include laptop {
+//    .hero__header {
+//       font-size: 2.8rem;
+//    }
+// }
+
+// @include desktop {
+//    .hero__header {
+//       font-size: 3rem;
+//    }
+// }
+
 
 
 

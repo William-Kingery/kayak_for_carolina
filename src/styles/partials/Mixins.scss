@@ -1,6 +1,7 @@
 @use './Variables.scss' as *;
 
 
+
 @mixin mobile-m {
     @media screen and (min-width: $mobile-m) {
         @content;
@@ -38,3 +39,5 @@
     }
 
 }
+
+
