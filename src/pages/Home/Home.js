@@ -1,10 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Popup from "../../components/Popup/Popup";
 // style
 import "./Home.scss";
 
 const Home = () => {
+   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+   const donationUrls = {
+      venmo: "https://venmo.com/code?user_id=4189803545364018575&created=1730651423", 
+      paypal: "i_will_put_something_here", // replace with your actual PayPal URL
+      fareharbor: "https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes"
+   };
+
+   const handleDonateClick = (e) => {
+      e.preventDefault();
+      setIsPopupOpen(true);
+   };
 
    const handleBookingClick = (e, href) => {
       e.preventDefault();
@@ -13,6 +26,7 @@ const Home = () => {
          window.open(href, "_blank", "noopener,noreferrer");
       }
    };
+
    return (
       <main>
          <Header/>
@@ -20,10 +34,9 @@ const Home = () => {
             <h1 className="hero__header">Kayak For Carolina</h1>
             <div className="hero__button">
                <div className="button">
-               <a href="https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes" 
-                  onClick={(e) => handleBookingClick(e, "https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes")} className="button__donate">Donate</a>
-               <a href="https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes" 
-                  onClick={(e) => handleBookingClick(e, "https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes")} className="button__book">Book Event</a>
+                  <button onClick={handleDonateClick} className="button__donate">Donate</button>
+                  <a href="https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes" 
+                     onClick={(e) => handleBookingClick(e, "https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes")} className="button__book">Book Event</a>
                </div>
             </div>
          </section>
@@ -40,13 +53,13 @@ const Home = () => {
             </p>
             <p className="event__description">
                For this event, 100% of your donations and registration fees will go to two wonderful organizations: <a href="https://hurricanehelenewnc.com/" className="event__link">Helene Rebuild Collaborative</a> Helene Rebuild Collaborative, organized by fellow paddling industry folks to the west, 
-               and <a className="event__link" href="https://mountaintrue.org/mountainstrong/">Mountain True</a> Mountain True, dedicated to clean waters, resilient forests, and healthy communities through their Mountain Strong Recovery and Resilience Fund. 
+               and <a className="event__link" href="https://mountaintrue.org/mountainstrong/">MountainTrue</a>, dedicated to clean waters, resilient forests, and healthy communities through their <a className="event__link" href="https://mountaintrue.org/mountainstrong/">MountainStrong</a> Recovery and Resilience Fund. 
                Both causes are boots-on-the-ground collaborative efforts to help lay the groundwork for recovery and rebuilding.
             </p>
-            <p className="event__description"><strong>Meeting Point:</strong> Dramtree Park, 602 Surry Street, Wilmington, NC 28405</p>
          </section>
          <section className="options"> 
             <h2 className="options__header">Three wonderful ways to join this fun event</h2>
+            <p className="options__sub-description">Your registration donation includes your kayak, paddle and pfd!</p>
             <div className="options__cont">
                <h3 className="options__sub-header">Ride The Tide!</h3>
                <p className="options__description">
@@ -79,17 +92,15 @@ const Home = () => {
          <section className="donate">
             <div className="donate__cont">
                <h2 className="donate__header">Donations!</h2>
-               <p className="donate__description">100% of all kayak rental proceeds will be used as donations</p>
                <p className="donate__sub-header">Donations will go to support:</p>
                <ul className="donate__ul">
                   <li className="donte__items"><strong>MountainStrong Hurricane Recovery Fund - </strong><a href="https://mountaintrue.org/mountainstrong" target="_blank" rel="noopener noreferrer">mountaintrue.org/mountainstrong</a></li>
                   <li className="donte__items"><strong>Helene Rebuild Collaborative - </strong><a href="https://hurricanehelenewnc.com" target="_blank" rel="noopener noreferrer">hurricanehelenewnc.com</a></li>
                </ul>
-               <p className="donate__description">If you are unable to paddle the event, please contact us. Your donation will go directly to the non-profit organizations.</p>
             </div>
          </section>
 
-         <section className="kayak">
+         {/* <section className="kayak">
          <h2 className="kayak__header">Kayak Options</h2>
             <div className="kayak__cont">
                <p className="kayak__description"><strong>Single Kayaks:</strong> Enter the number of singles needed. Ages 12 and up.</p>
@@ -106,16 +117,16 @@ const Home = () => {
                   <li className="kayak__item">Bug spray (just in case)</li>
                </ul>
             </div>
-         </section>
+         </section> */}
          <section className="bottom ">
-         <div className="button">
-               <a href="https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes" 
-                  onClick={(e) => handleBookingClick(e, "https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes")} className="button__donate">Donate</a>
+            <div className="button">
+               <button onClick={handleDonateClick} className="button__donate">Donate</button>
                <a href="https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes" 
                   onClick={(e) => handleBookingClick(e, "https://fareharbor.com/embeds/book/kayakcarolina/items/584178/availability/1576440430/book/?full-items=yes")} className="button__book">Book Event</a>
-               </div>
+            </div>
          </section>
          <Footer />
+         <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} urls={donationUrls} />
       </main>
    );
 };
