@@ -33,7 +33,7 @@ main {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.15); // Adjust opacity as needed
+      background: rgba(0, 0, 0, 0.15); 
       z-index: 1;
    }
 
@@ -123,6 +123,12 @@ main {
       color: $tx-200;
       margin-bottom: 0.625rem;
    }
+   &__sub-description {
+      font-style: italic;
+      font-size: 1.5rem;
+      color: #149744;
+      margin-bottom: 0.625rem;
+   }
    &__sub-header {
       font-size: 1.5rem;
       color: $tx-100;
@@ -142,6 +148,8 @@ main {
 }
 
 .donate {
+   margin-bottom: 2.5rem;
+
    &__cont {
       background: $bg-100;
       padding: 1rem;
@@ -159,11 +167,13 @@ main {
       }
    }
 
-   &__header {
+   &__header {@include tablet{}
       font-size: 1.5rem;
       color: $tx-200;
       margin-bottom: 0.625rem;
+      text-decoration: underline;
    }
+
    &__sub-header {
       font-size: 1.5rem;
       color: $tx-200;
@@ -193,49 +203,49 @@ main {
    }
 }
 
-.kayak {
-   padding: 1.25rem;
-   box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
-   margin: .5rem .5rem 1.25rem .5rem;
-   @include mobile-l {
-      margin: 1rem 1rem 2rem 1rem;
-   }
-   @include tablet {
-      margin: 1rem 2rem 3rem 2rem;
-      padding: 2rem 2rem;
-   }
+// .kayak {
+//    padding: 1.25rem;
+//    box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
+//    margin: .5rem .5rem 1.25rem .5rem;
+//    @include mobile-l {
+//       margin: 1rem 1rem 2rem 1rem;
+//    }
+//    @include tablet {
+//       margin: 1rem 2rem 3rem 2rem;
+//       padding: 2rem 2rem;
+//    }
 
-   &__header {
-      font-size: 1.5rem;
-      color: $tx-200;
-      margin-bottom: .5rem;
-   }
+//    &__header {
+//       font-size: 1.5rem;
+//       color: $tx-200;
+//       margin-bottom: .5rem;
+//    }
 
-   &__cont {
-      background-color: $bg-100;
-      padding: 0 1rem;
-      border-radius: 0.5rem;
-   }
+//    &__cont {
+//       background-color: $bg-100;
+//       padding: 0 1rem;
+//       border-radius: 0.5rem;
+//    }
 
-   &__description {
-      font-size: 1.125rem;
-      color: $tx-100;
-      line-height: 1.5;
-   }
+//    &__description {
+//       font-size: 1.125rem;
+//       color: $tx-100;
+//       line-height: 1.5;
+//    }
 
-   &__ul {
-      list-style: none;
-      padding-left: 1.25rem;
-      margin-top: 0.625rem;
-   }
+//    &__ul {
+//       list-style: none;
+//       padding-left: 1.25rem;
+//       margin-top: 0.625rem;
+//    }
 
-   &__item {
-      font-size: 1rem;
-      color: $tx-100;
-      line-height: 1.5;
-      font-weight: 600;
-   }
-}
+//    &__item {
+//       font-size: 1rem;
+//       color: $tx-100;
+//       line-height: 1.5;
+//       font-weight: 600;
+//    }
+// }
 
 .button {
    display: flex;
@@ -245,6 +255,7 @@ main {
    &__donate,
    &__info,
    &__book {
+      border: 0;
       padding: 0.75rem 1.5rem;
       font-size: 1.125rem;
       border-radius: 0.25rem;
@@ -275,41 +286,3 @@ main {
    margin-bottom: 4rem;
 }
 
-// @include mobile-m {
-//    .hero__header {
-//       font-size: 2rem;
-//    }
-//    .hero__sub-header {
-//       font-size: 1.2rem;
-//    }
-// }
-
-// @include mobile-l {
-//    .hero__header {
-//       font-size: 2.2rem;
-//    }
-// }
-
-// @include tablet {
-//    .hero__header {
-//       font-size: 2.5rem;
-//    }
-// }
-
-// @include laptop {
-//    .hero__header {
-//       font-size: 2.8rem;
-//    }
-// }
-
-// @include desktop {
-//    .hero__header {
-//       font-size: 3rem;
-//    }
-// }
-
-
-
-
-
- 
