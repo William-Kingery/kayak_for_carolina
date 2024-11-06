@@ -148,7 +148,7 @@ main {
 }
 
 .donate {
-   margin-bottom: 2.5rem;
+   margin: 2.5rem 0;
 
    &__cont {
       background: $bg-100;
@@ -203,6 +203,49 @@ main {
    }
 }
 
+
+.button {
+   display: flex;
+   justify-content: center;
+   gap: 1.25rem;
+
+   &__donate,
+   &__info,
+   &__book {
+      border: 0;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.125rem;
+      border-radius: 0.25rem;
+      color: $bg-100;
+      cursor: pointer;
+      text-decoration: none;
+      background-color: $ac-100;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s, opacity 0.2s;
+      position: relative;
+      z-index: 2;
+
+      &:hover {
+         opacity: 0.95;
+         transform: scale(1.05);
+      }
+   }
+
+   &__book {
+      background-color: $ac-200;
+   }
+
+   &__info {
+      background-color: $ac-300;
+   }
+}
+.bottom {
+   margin-bottom: 4rem;
+}
+
+
+
+
 // .kayak {
 //    padding: 1.25rem;
 //    box-shadow: 0 0.5rem 1.25rem rgba(0, 128, 255, 0.15);
@@ -246,43 +289,3 @@ main {
 //       font-weight: 600;
 //    }
 // }
-
-.button {
-   display: flex;
-   justify-content: center;
-   gap: 1.25rem;
-
-   &__donate,
-   &__info,
-   &__book {
-      border: 0;
-      padding: 0.75rem 1.5rem;
-      font-size: 1.125rem;
-      border-radius: 0.25rem;
-      color: $bg-100;
-      cursor: pointer;
-      text-decoration: none;
-      background-color: $ac-100;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s, opacity 0.2s;
-      position: relative;
-      z-index: 2;
-
-      &:hover {
-         opacity: 0.95;
-         transform: scale(1.05);
-      }
-   }
-
-   &__book {
-      background-color: $ac-200;
-   }
-
-   &__info {
-      background-color: $ac-300;
-   }
-}
-.bottom {
-   margin-bottom: 4rem;
-}
-

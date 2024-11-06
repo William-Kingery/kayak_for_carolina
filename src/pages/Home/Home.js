@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Popup from "../../components/Popup/Popup";
+import PhotoSlider from "../../components/Slider/PhotoSlider";
 // style
 import "./Home.scss";
 
@@ -89,6 +90,7 @@ const Home = () => {
                </a>
             </div>
          </div>
+         <PhotoSlider />
          <section className="donate">
             <div className="donate__cont">
                <h2 className="donate__header">Donations!</h2>
