@@ -1,0 +1,19 @@
+@use "../../styles/partials/Mixins.scss" as *;
+@use "../../styles/partials/Global.scss" as *;
+@use "../../styles/partials/Variables.scss" as *;
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+ 
+.slider__image {
+    width: 100%; // Make the images take full width of the container
+    height: auto; // Maintain the aspect ratio of the images
+    border-radius: 8px; // Optional: Add some rounding to the corners
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Optional: Add a subtle shadow
+} 
+ 
+ 
