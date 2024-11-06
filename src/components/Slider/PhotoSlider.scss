@@ -6,14 +6,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: .3125rem;
+    width: 100%;  // Ensure the slider takes up full width
+    box-sizing: border-box; // Prevent padding from affecting width
+    overflow: hidden;  // Prevent any overflow
 }
- 
+
+.slick-slide {
+    display: flex;  
+    justify-content: center; 
+}
+
 .slider__image {
-    width: 100%; // Make the images take full width of the container
-    height: auto; // Maintain the aspect ratio of the images
-    border-radius: 8px; // Optional: Add some rounding to the corners
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Optional: Add a subtle shadow
-} 
- 
+    width: 100%;  // Make the image fill the container
+    height: 100%;  // Make sure the height takes up the full space
+    object-fit: cover;  // Ensures the image covers the area without distortion
+    border-radius: 8px;  // Optional: Add some rounding to the corners
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Optional: Add a subtle shadow for effect
+}
+
+.slick-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slick-prev, .slick-next {
+    z-index: 1;  // Ensure navigation arrows are visible if used
+}
+
+.slick-dots {
+    position: relative; 
+    bottom: 5px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem; 
+}
  
